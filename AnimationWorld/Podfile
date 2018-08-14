@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://github.com/CocoaPods/Specs.git' 
+ platform :ios, '9.0'
+target 'AnimationWorld' do
+  use_frameworks!
+pod 'RxSwift', '~> 4.1.2'
+pod 'RxCocoa', '~> 4.1.2'
+pod 'RxDataSources', '~> 3.0.2'
+pod 'Then', '~> 2.3.0'
+pod 'SnapKit', '~> 4.0.0'
+pod 'Reusable', '~> 4.0.0'
+pod 'NSObject+Rx', '~> 4.2.0'
+pod 'CYLTabBarController', '~> 1.17.6'
+pod 'Validator'
+pod 'SVProgressHUD', '~> 2.2.2'
+pod 'Kingfisher', '~> 4.8.0'
+pod 'MJRefresh', '~> 3.1.15.1'
+pod 'HandyJSON', '~>4.1.1'
+pod 'SKPhotoBrowser'
+pod 'YYCategories', '~> 1.0.4'
+pod 'Moya/RxSwift'
+pod 'FDFullscreenPopGesture_Bell', '~> 2.0'
+pod 'YYText', '~> 1.0.7'
+end
