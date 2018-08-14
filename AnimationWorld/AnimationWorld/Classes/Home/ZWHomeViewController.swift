@@ -23,7 +23,7 @@ class ZWHomeViewController: ZWBaseViewController {
     let layout = UICollectionViewFlowLayout().then {
         $0.minimumLineSpacing = 10
         $0.minimumInteritemSpacing = 10
-        $0.headerReferenceSize = CGSize(width:W , height: 300.0)
+        $0.headerReferenceSize = CGSize(width:W , height: 210.0)
         $0.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         let w  = (W-60)/3.0
         $0.itemSize = CGSize(width: w, height: 100.0)
@@ -43,7 +43,6 @@ class ZWHomeViewController: ZWBaseViewController {
 extension ZWHomeViewController{
 
   override  func addSubViews(){
-
 
     collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
     view.addSubview(collectionView!)
@@ -136,7 +135,7 @@ extension ZWHomeViewController{
             $0.backgroundColor = UIColor.white
             $0.layer.borderColor = UIColor.lightGray.cgColor
             $0.layer.borderWidth = 1
-            let att = NSMutableAttributedString(string: "搜索")
+            let att = NSMutableAttributedString(string: "漫画名称/作者名称")
             att.yy_color = UIColor.color(r: 65, g: 76, b: 110, a: 1)
             att.yy_font = UIFont.systemFont(ofSize: 12)
             $0.attributedPlaceholder = att

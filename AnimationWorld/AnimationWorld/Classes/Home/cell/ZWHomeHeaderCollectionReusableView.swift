@@ -9,6 +9,7 @@
 import UIKit
 import Reusable
 import RxSwift
+import Kingfisher
 class ZWHomeHeaderCollectionReusableView: UICollectionReusableView ,Reusable{
 
     var hostBtn:UIButton?
@@ -32,12 +33,13 @@ class ZWHomeHeaderCollectionReusableView: UICollectionReusableView ,Reusable{
             $0.contentMode = .scaleAspectFill
             $0.backgroundColor = UIColor.gray
             addSubview($0)
+            
             $0.snp.makeConstraints({ (make) in
                 make.top.right.left.equalToSuperview()
-                make.height.equalTo(270)
+                make.height.equalTo(180)
             })
         })
-
+        banner?.kf.setImage(with: ImageResource(downloadURL:URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534252777002&di=0f586e2f1f3eb7bcee31531d856943d4&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01576a5809ae60a84a0d304f97963b.jpg%401280w_1l_2o_100sh.jpg")!))
         searchBar = UITextField().then {
 
             $0.layer.cornerRadius = 15
@@ -45,7 +47,7 @@ class ZWHomeHeaderCollectionReusableView: UICollectionReusableView ,Reusable{
             $0.backgroundColor = UIColor.clear
             $0.layer.borderColor = UIColor.lightGray.cgColor
             $0.layer.borderWidth = 1
-            let att = NSMutableAttributedString(string: "搜索")
+            let att = NSMutableAttributedString(string: "漫画名称/作者名称")
             att.yy_color = UIColor.color(r: 65, g: 76, b: 110, a: 1)
             att.yy_font = UIFont.systemFont(ofSize: 12)
             $0.attributedPlaceholder = att
