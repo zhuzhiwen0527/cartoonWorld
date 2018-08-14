@@ -13,6 +13,8 @@
 		ED29956A2122AAAD00F3E7B5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2995692122AAAD00F3E7B5 /* UIColor+Extension.swift */; };
 		ED29956C2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29956B2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift */; };
 		ED29956E2122AF6000F3E7B5 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29956D2122AF6000F3E7B5 /* common.swift */; };
+		ED29957C2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29957A2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift */; };
+		ED29957D2122D36B00F3E7B5 /* ConstraintArrayDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29957B2122D36B00F3E7B5 /* ConstraintArrayDSL.swift */; };
 		ED6E512D21211AF8005E9879 /* ZWHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E512C21211AF8005E9879 /* ZWHomeModel.swift */; };
 		ED6E513021211C2E005E9879 /* ZWViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E512F21211C2E005E9879 /* ZWViewModelType.swift */; };
 		ED6E513321211C47005E9879 /* ZWHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E513221211C47005E9879 /* ZWHomeViewModel.swift */; };
@@ -57,6 +59,8 @@
 		ED2995692122AAAD00F3E7B5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		ED29956B2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWHomeHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		ED29956D2122AF6000F3E7B5 /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		ED29957A2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintArray+Extensions.swift"; sourceTree = "<group>"; };
+		ED29957B2122D36B00F3E7B5 /* ConstraintArrayDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintArrayDSL.swift; sourceTree = "<group>"; };
 		ED6E512C21211AF8005E9879 /* ZWHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWHomeModel.swift; sourceTree = "<group>"; };
 		ED6E512F21211C2E005E9879 /* ZWViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWViewModelType.swift; sourceTree = "<group>"; };
 		ED6E513221211C47005E9879 /* ZWHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWHomeViewModel.swift; sourceTree = "<group>"; };
@@ -134,6 +138,15 @@
 				ED1B6A0B2120695900A81742 /* ZWHomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		ED2995792122D36B00F3E7B5 /* SnapKitExtension */ = {
+			isa = PBXGroup;
+			children = (
+				ED29957A2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift */,
+				ED29957B2122D36B00F3E7B5 /* ConstraintArrayDSL.swift */,
+			);
+			path = SnapKitExtension;
 			sourceTree = "<group>";
 		};
 		ED6E512921211964005E9879 /* Video */ = {
@@ -253,6 +266,7 @@
 		EDE9018E2120482500D0D2AD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				ED2995792122D36B00F3E7B5 /* SnapKitExtension */,
 				EDE9019521204B4900D0D2AD /* Observable+HandyJSON.swift */,
 				ED2995692122AAAD00F3E7B5 /* UIColor+Extension.swift */,
 			);
@@ -515,6 +529,8 @@
 				ED6E512D21211AF8005E9879 /* ZWHomeModel.swift in Sources */,
 				ED6E513321211C47005E9879 /* ZWHomeViewModel.swift in Sources */,
 				EDE9019821204C3D00D0D2AD /* ZWNetworkTool.swift in Sources */,
+				ED29957C2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift in Sources */,
+				ED29957D2122D36B00F3E7B5 /* ConstraintArrayDSL.swift in Sources */,
 				ED6E513A212184BA005E9879 /* ZWMeViewController.swift in Sources */,
 				ED6E513021211C2E005E9879 /* ZWViewModelType.swift in Sources */,
 				ED6E5138212184A8005E9879 /* ZWVideoViewController.swift in Sources */,

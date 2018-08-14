@@ -15,15 +15,17 @@ import SnapKit
 import NSObject_Rx
 import YYCategories
 import YYText
+import MJRefresh
+
 class ZWHomeViewController: ZWBaseViewController {
 
     let viewModel = ZWHomeViewModel()
     let layout = UICollectionViewFlowLayout().then {
         $0.minimumLineSpacing = 10
         $0.minimumInteritemSpacing = 10
-        $0.headerReferenceSize = CGSize(width:W , height: 200.0)
+        $0.headerReferenceSize = CGSize(width:W , height: 300.0)
         $0.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        let w  = (W-50)/2.0
+        let w  = (W-60)/3.0
         $0.itemSize = CGSize(width: w, height: 100.0)
     }
 
@@ -31,20 +33,6 @@ class ZWHomeViewController: ZWBaseViewController {
 
     var barView:UIView?
     var searchBar:UITextField?
-
-
-    let dataSource = RxCollectionViewSectionedReloadDataSource<ZWSection>(configureCell:  { (ds, cv, ip, item) -> UICollectionViewCell in
-        let cell = cv.dequeueReusableCell(for: ip) as ZWHomeCollectionViewCell
-        cell.model = item
-        return cell
-
-    },configureSupplementaryView:{ (ds, cv, kind, ip) -> UICollectionReusableView in
-        
-        let view = cv.dequeueReusableSupplementaryView(ofKind: kind, for: ip) as ZWHomeHeaderCollectionReusableView
-        return view
-
-    })
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,21 +51,58 @@ extension ZWHomeViewController{
     collectionView?.register(cellType: ZWHomeCollectionViewCell.self)
     collectionView?.register(supplementaryViewType: ZWHomeHeaderCollectionReusableView.self, ofKind: UICollectionElementKindSectionHeader)
     let tabbarHeight = self.tabBarController?.tabBar.frame.height
-    print(tabbarHeight as Any)
     collectionView?.snp.makeConstraints({ (maker) in
         maker.edges.equalTo(view).inset(ConstraintInsets(top: 0, left: 0, bottom: tabbarHeight!, right: 0))
     })
+
+
         setNavi()
     }
 
     override  func bindView(){
 
+        let dataSource = RxCollectionViewSectionedReloadDataSource<ZWSection>(configureCell:  { (ds, cv, ip, item) -> UICollectionViewCell in
+            let cell = cv.dequeueReusableCell(for: ip) as ZWHomeCollectionViewCell
+            cell.model = item
+            return cell
+
+        },configureSupplementaryView:{ [weak self](ds, cv, kind, ip) -> UICollectionReusableView in
+
+            let view = cv.dequeueReusableSupplementaryView(ofKind: kind, for: ip) as ZWHomeHeaderCollectionReusableView
+            view.subject = self?.viewModel.subject
+            return view
+
+        })
+
         let homeInput = ZWHomeViewModel.ZWInput(name: "首页")
         let homeOutput = viewModel.transform(input: homeInput)
+
         homeOutput.requestCommond.onNext(true)
+
         homeOutput.sections.asDriver().drive(collectionView!.rx.items(dataSource: dataSource)).disposed(by: rx.disposeBag)
 
 
+        //  刷新事件
+        collectionView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            homeOutput.requestCommond.onNext(true)
+        })
+        homeOutput.refreshStatus.asObservable().subscribe(onNext: {[weak self] status in
+            switch status {
+            case .endRefresh:
+                self?.collectionView?.mj_header.endRefreshing()
+            case .noMoreData:
+                self?.collectionView?.mj_footer.endRefreshingWithNoMoreData()
+            default:
+                break
+            }
+        }).disposed(by: rx.disposeBag)
+
+        //组视图 点击事件
+        viewModel.subject.subscribe(onNext: {
+            print($0)
+        }).disposed(by: rx.disposeBag)
+
+        //点击事件
         collectionView?.rx.itemSelected.subscribe(onNext: { IndexPath in
             print(IndexPath.row)
         }).disposed(by: rx.disposeBag)
@@ -86,14 +111,13 @@ extension ZWHomeViewController{
             let offset = self?.collectionView?.contentOffset.y;
             let alpha = offset! / 200.0;
             self?.barView?.alpha = alpha;
-            self?.searchBar?.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: alpha)
+            self?.searchBar?.isHidden = alpha > 1 ? false : true
         }).disposed(by: rx.disposeBag)
     }
 
     func setNavi(){
 
         let  sf = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.frame.height)!
-        print(sf)
         fd_prefersNavigationBarHidden = true
         barView = UIView().then({
             $0.alpha = 0.0
@@ -109,7 +133,7 @@ extension ZWHomeViewController{
 
             $0.layer.cornerRadius = 15
             $0.layer.masksToBounds = true
-            $0.backgroundColor = UIColor.clear
+            $0.backgroundColor = UIColor.white
             $0.layer.borderColor = UIColor.lightGray.cgColor
             $0.layer.borderWidth = 1
             let att = NSMutableAttributedString(string: "搜索")
@@ -118,6 +142,7 @@ extension ZWHomeViewController{
             $0.attributedPlaceholder = att
             $0.textAlignment = .center
             $0.delegate = self
+            $0.isHidden = true
             view.addSubview($0)
             $0.snp.makeConstraints({ (make) in
                 make.left.equalTo(40)

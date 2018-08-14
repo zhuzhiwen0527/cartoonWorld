@@ -19,6 +19,8 @@ enum ZWRefreshStatus {
 
 class ZWHomeViewModel: NSObject {
     let models = Variable<[homeModel]>([])
+    var subject = PublishSubject<String>()
+
 }
 extension ZWHomeViewModel :ZWViewModelType{
 
