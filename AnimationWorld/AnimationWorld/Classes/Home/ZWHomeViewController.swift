@@ -21,9 +21,9 @@ class ZWHomeViewController: ZWBaseViewController {
     let layout = UICollectionViewFlowLayout().then {
         $0.minimumLineSpacing = 10
         $0.minimumInteritemSpacing = 10
-        $0.headerReferenceSize = CGSize(width:H , height: 200.0)
+        $0.headerReferenceSize = CGSize(width:W , height: 200.0)
         $0.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        let w  = (UIScreen.main.bounds.width-50)/2.0
+        let w  = (W-50)/2.0
         $0.itemSize = CGSize(width: w, height: 100.0)
     }
 
