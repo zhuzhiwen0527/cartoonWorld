@@ -77,6 +77,7 @@ extension ZWHomeViewController{
         homeOutput.requestCommond.onNext(true)
         homeOutput.sections.asDriver().drive(collectionView!.rx.items(dataSource: dataSource)).disposed(by: rx.disposeBag)
 
+
         collectionView?.rx.itemSelected.subscribe(onNext: { IndexPath in
             print(IndexPath.row)
         }).disposed(by: rx.disposeBag)
@@ -127,9 +128,6 @@ extension ZWHomeViewController{
         }
 
     }
-
-}
-extension ZWHomeViewController:UICollectionViewDelegate{
 
 }
 extension ZWHomeViewController:UITextFieldDelegate{
