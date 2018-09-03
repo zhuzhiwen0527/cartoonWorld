@@ -21,14 +21,13 @@ class ZWHomeViewController: ZWBaseViewController {
 
     let viewModel = ZWHomeViewModel()
     let layout = UICollectionViewFlowLayout().then {
-        $0.minimumLineSpacing = 10
+        $0.minimumLineSpacing = 5
         $0.minimumInteritemSpacing = 10
         $0.headerReferenceSize = CGSize(width:W , height: 210.0)
-        $0.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        let w  = (W-60)/3.0
-        $0.itemSize = CGSize(width: w, height: 100.0)
+        $0.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+        let w  = (W-30)/3.0
+        $0.itemSize = CGSize(width: w, height: w/3*4 + 20)
     }
-
     var collectionView:UICollectionView?
 
     var barView:UIView?
@@ -68,12 +67,14 @@ extension ZWHomeViewController{
         },configureSupplementaryView:{ [weak self](ds, cv, kind, ip) -> UICollectionReusableView in
 
             let view = cv.dequeueReusableSupplementaryView(ofKind: kind, for: ip) as ZWHomeHeaderCollectionReusableView
+            let modle =  ds.sectionModels[ip.section]
+            view.imgUrl = modle.imgUlr
             view.subject = self?.viewModel.subject
             return view
 
         })
 
-        let homeInput = ZWHomeViewModel.ZWInput(name: "首页")
+        let homeInput = ZWHomeViewModel.ZWInput(name: "http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comichot_1.json?&ver=2.1.3&plat=ip&channel=appstore&app=FuCiYuan")
         let homeOutput = viewModel.transform(input: homeInput)
 
         homeOutput.requestCommond.onNext(true)
@@ -98,12 +99,22 @@ extension ZWHomeViewController{
 
         //组视图 点击事件
         viewModel.subject.subscribe(onNext: {
-            print($0)
+   
+            homeInput.name = $0
+            homeOutput.requestCommond.onNext(true)
+
         }).disposed(by: rx.disposeBag)
 
         //点击事件
-        collectionView?.rx.itemSelected.subscribe(onNext: { IndexPath in
-            print(IndexPath.row)
+
+        collectionView?.rx.modelSelected(homeModel.self).subscribe(onNext: { [weak self]items in
+           
+          
+            let vc = ZWCartoonInfoViewController()
+            vc.model = items
+            vc.hidesBottomBarWhenPushed = true
+            self?.cyl_push(vc, animated: true)
+
         }).disposed(by: rx.disposeBag)
 
         collectionView?.rx.didScroll.subscribe({ [weak self] _ in
@@ -112,6 +123,8 @@ extension ZWHomeViewController{
             self?.barView?.alpha = alpha;
             self?.searchBar?.isHidden = alpha > 1 ? false : true
         }).disposed(by: rx.disposeBag)
+
+
     }
 
     func setNavi(){

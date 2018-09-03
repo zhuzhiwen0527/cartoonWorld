@@ -29,7 +29,7 @@ extension ZWHomeViewModel :ZWViewModelType{
     typealias Input = ZWInput
 
 
-    struct ZWInput {
+    class  ZWInput {
         // 传递参数
 
         var name = ""
@@ -56,16 +56,16 @@ extension ZWHomeViewModel :ZWViewModelType{
         let sections = models.asObservable().map { (items) -> [ZWSection] in
             // 当models的值被改变时会调用
 
-            return [ZWSection(items: items)]
+            return [ZWSection(imgUlr: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534252777002&di=0f586e2f1f3eb7bcee31531d856943d4&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01576a5809ae60a84a0d304f97963b.jpg%401280w_1l_2o_100sh.jpg", items: items)]
             }.asDriver(onErrorJustReturn: [])
 
-        print(input.name)
+
 
         var output = ZWOutput(sections: sections)
 
         output.requestCommond.subscribe(onNext: {[unowned self] isReloadData in
-
-            zwNetTool.rx.request(.home).asObservable().mapArray(homeModel.self).subscribe({ [weak self] (event) in
+            print(input.name)
+            zwNetTool.rx.request(.home(url:input.name)).asObservable().mapArray(homeModel.self).subscribe({ [weak self] (event) in
                 switch event {
                 case let .next(modelArr):
                     output.index =  isReloadData ? 0 :  output.index + 1

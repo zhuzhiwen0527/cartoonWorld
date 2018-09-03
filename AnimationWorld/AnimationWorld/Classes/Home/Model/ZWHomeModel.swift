@@ -36,7 +36,7 @@ struct homeModel:HandyJSON {
 /* ============================= SectionModel =============================== */
 
 struct ZWSection {
-
+    var imgUlr = ""
     var items: [Item]
 }
 

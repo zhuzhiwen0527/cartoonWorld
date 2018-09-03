@@ -20,6 +20,14 @@ class ZWHomeHeaderCollectionReusableView: UICollectionReusableView ,Reusable{
     var subject:PublishSubject<String>?
     var searchBar:UITextField?
 
+    var selectBtn:UIButton?
+
+    var imgUrl = String(){
+        didSet{
+            banner?.kf.setImage(with: ImageResource(downloadURL:URL(string: imgUrl)!))
+        }
+    }
+
     override init(frame:CGRect) {
         super.init(frame: frame)
         setUI()
@@ -39,7 +47,7 @@ class ZWHomeHeaderCollectionReusableView: UICollectionReusableView ,Reusable{
                 make.height.equalTo(180)
             })
         })
-        banner?.kf.setImage(with: ImageResource(downloadURL:URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534252777002&di=0f586e2f1f3eb7bcee31531d856943d4&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01576a5809ae60a84a0d304f97963b.jpg%401280w_1l_2o_100sh.jpg")!))
+
         searchBar = UITextField().then {
 
             $0.layer.cornerRadius = 15
@@ -67,35 +75,53 @@ class ZWHomeHeaderCollectionReusableView: UICollectionReusableView ,Reusable{
             $0.setTitle("热门", for: .normal)
             $0.setTitleColor(UIColor.color(r: 51, g: 51, b: 51, a: 1), for: .normal)
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            $0.setTitleColor(UIColor.color(r: 255, g: 85, b: 153, a: 1), for: .selected)
+            $0.isSelected = true
+            self.selectBtn = $0
             $0.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: {[weak self] _ in
-                self?.subject?.onNext("热门")
+                self?.subject?.onNext("http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comichot_1.json?&ver=2.1.3&plat=ip&channel=appstore&app=FuCiYuan")
+                self?.selectBtn?.isSelected = false;
+                self?.selectBtn = self?.hostBtn
+                self?.hostBtn?.isSelected = true;
             }).disposed(by: rx.disposeBag)
             addSubview($0)
         })
-       newBtn = UIButton().then({
+        newBtn = UIButton().then({
             $0.setTitle("最新", for: .normal)
             $0.setTitleColor(UIColor.color(r: 51, g: 51, b: 51, a: 1), for: .normal)
+            $0.setTitleColor(UIColor.color(r: 255, g: 85, b: 153, a: 1), for: .selected)
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        $0.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: {[weak self] _ in
-            self?.subject?.onNext("最新")
-        }).disposed(by: rx.disposeBag)
+            $0.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: {[weak self] _ in
+                self?.subject?.onNext("http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comicfinish_1.json?&ver=2.1.3&plat=ip&channel=appstore&app=FuCiYuan")
+                self?.selectBtn?.isSelected = false;
+                self?.selectBtn = self?.newBtn
+                self?.newBtn?.isSelected = true;
+            }).disposed(by: rx.disposeBag)
             addSubview($0)
         })
         overBtn = UIButton().then({
             $0.setTitle("完结", for: .normal)
             $0.setTitleColor(UIColor.color(r: 51, g: 51, b: 51, a: 1), for: .normal)
+            $0.setTitleColor(UIColor.color(r: 255, g: 85, b: 153, a: 1), for: .selected)
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             $0.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: {[weak self] _ in
-                self?.subject?.onNext("完结")
+                self?.subject?.onNext("http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comicline_1.json?&ver=2.1.3&plat=ip&channel=appstore&app=FuCiYuan")
+                self?.selectBtn?.isSelected = false;
+                self?.selectBtn = self?.overBtn
+                self?.overBtn?.isSelected = true;
             }).disposed(by: rx.disposeBag)
             addSubview($0)
         })
         cocorBtn = UIButton().then({
             $0.setTitle("彩漫", for: .normal)
             $0.setTitleColor(UIColor.color(r: 51, g: 51, b: 51, a: 1), for: .normal)
+            $0.setTitleColor(UIColor.color(r: 255, g: 85, b: 153, a: 1), for: .selected)
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             $0.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: {[weak self] _ in
-                self?.subject?.onNext("彩漫")
+                self?.subject?.onNext("http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comicmain_1.json?&ver=2.1.3&plat=ip&channel=appstore&app=FuCiYuan")
+                self?.selectBtn?.isSelected = false;
+                self?.selectBtn = self?.cocorBtn
+                self?.cocorBtn?.isSelected = true;
             }).disposed(by: rx.disposeBag)
             addSubview($0)
         })

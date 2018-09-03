@@ -13,7 +13,7 @@ let url = "http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comichot_1.json?&ver=
 
 enum ZWNetworkTool {
     // 18237100685  yw12345
-    case home
+    case home(url:String)
     case dynamicData(token:String,pagesize:String,pageindex:String)
 }
 extension ZWNetworkTool:TargetType {
@@ -23,8 +23,13 @@ extension ZWNetworkTool:TargetType {
 //
     /// The target's base `URL`.
     var baseURL: URL {
+        switch self {
+        case .dynamicData( _, _, _):
+            return URL(string:url)!
+        case .home(let url):
+            return URL(string:url)!
+        }
 
-        return URL(string:url)!
 
     }
 

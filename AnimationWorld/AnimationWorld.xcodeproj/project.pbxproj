@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		AEEB84C0FB344C11796FF2DF /* Pods_AnimationWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741F381535D8F5237A0AFB4D /* Pods_AnimationWorld.framework */; };
+		ED067B4921324DDC002D59A7 /* ZWCartoonDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED067B4821324DDC002D59A7 /* ZWCartoonDetailHeaderView.swift */; };
+		ED067B4B21324DE5002D59A7 /* ZWCartoonDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED067B4A21324DE5002D59A7 /* ZWCartoonDetailHeaderView.xib */; };
 		ED1B6A0C2120695900A81742 /* ZWHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B6A0B2120695900A81742 /* ZWHomeViewController.swift */; };
 		ED1B6A0E21206E3600A81742 /* ZWBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B6A0D21206E3600A81742 /* ZWBaseViewController.swift */; };
+		ED1BB35321251CFF000CBEB5 /* ZWCartoonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1BB35221251CFF000CBEB5 /* ZWCartoonInfoViewController.swift */; };
 		ED29956A2122AAAD00F3E7B5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2995692122AAAD00F3E7B5 /* UIColor+Extension.swift */; };
 		ED29956C2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29956B2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift */; };
 		ED29956E2122AF6000F3E7B5 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29956D2122AF6000F3E7B5 /* common.swift */; };
@@ -54,8 +57,11 @@
 		6343524BF61F72B6C49E4A00 /* Pods-AnimationWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationWorld.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnimationWorld/Pods-AnimationWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		741F381535D8F5237A0AFB4D /* Pods_AnimationWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimationWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EE46885AF5935FC9D258F9 /* Pods-AnimationWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationWorld.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnimationWorld/Pods-AnimationWorld.release.xcconfig"; sourceTree = "<group>"; };
+		ED067B4821324DDC002D59A7 /* ZWCartoonDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCartoonDetailHeaderView.swift; sourceTree = "<group>"; };
+		ED067B4A21324DE5002D59A7 /* ZWCartoonDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWCartoonDetailHeaderView.xib; sourceTree = "<group>"; };
 		ED1B6A0B2120695900A81742 /* ZWHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWHomeViewController.swift; sourceTree = "<group>"; };
 		ED1B6A0D21206E3600A81742 /* ZWBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWBaseViewController.swift; sourceTree = "<group>"; };
+		ED1BB35221251CFF000CBEB5 /* ZWCartoonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCartoonInfoViewController.swift; sourceTree = "<group>"; };
 		ED2995692122AAAD00F3E7B5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		ED29956B2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWHomeHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		ED29956D2122AF6000F3E7B5 /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 				ED6E513121211C37005E9879 /* VM */,
 				ED6E512B21211AC5005E9879 /* Model */,
 				ED1B6A0B2120695900A81742 /* ZWHomeViewController.swift */,
+				ED1BB35221251CFF000CBEB5 /* ZWCartoonInfoViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -196,6 +203,8 @@
 			children = (
 				ED6E51342121623E005E9879 /* ZWHomeCollectionViewCell.swift */,
 				ED29956B2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift */,
+				ED067B4821324DDC002D59A7 /* ZWCartoonDetailHeaderView.swift */,
+				ED067B4A21324DE5002D59A7 /* ZWCartoonDetailHeaderView.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -412,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED067B4B21324DE5002D59A7 /* ZWCartoonDetailHeaderView.xib in Resources */,
 				EDB5E125211FDB5500F64548 /* LaunchScreen.storyboard in Resources */,
 				EDB5E122211FDB5500F64548 /* Assets.xcassets in Resources */,
 				EDB5E120211FDB5100F64548 /* Main.storyboard in Resources */,
@@ -529,10 +539,12 @@
 				EDE9019621204B4900D0D2AD /* Observable+HandyJSON.swift in Sources */,
 				ED29956A2122AAAD00F3E7B5 /* UIColor+Extension.swift in Sources */,
 				ED6E512D21211AF8005E9879 /* ZWHomeModel.swift in Sources */,
+				ED1BB35321251CFF000CBEB5 /* ZWCartoonInfoViewController.swift in Sources */,
 				ED6E513321211C47005E9879 /* ZWHomeViewModel.swift in Sources */,
 				EDE9019821204C3D00D0D2AD /* ZWNetworkTool.swift in Sources */,
 				ED29957C2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift in Sources */,
 				ED29957D2122D36B00F3E7B5 /* ConstraintArrayDSL.swift in Sources */,
+				ED067B4921324DDC002D59A7 /* ZWCartoonDetailHeaderView.swift in Sources */,
 				ED6E513A212184BA005E9879 /* ZWMeViewController.swift in Sources */,
 				ED6E513021211C2E005E9879 /* ZWViewModelType.swift in Sources */,
 				ED6E5138212184A8005E9879 /* ZWVideoViewController.swift in Sources */,
