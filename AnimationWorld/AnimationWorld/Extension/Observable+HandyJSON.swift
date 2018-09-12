@@ -14,11 +14,19 @@ import HandyJSON
 extension Response {
     // 将Json解析为单个Model
     public func mapObject<T: HandyJSON>(_ type: T.Type) throws -> T {
-        print(try mapString())
-        guard let object = T.deserialize(from: try mapString()) else {
+//        print(try mapString())
+        guard let json = try mapJSON() as? [String : Any] else {
             throw MoyaError.jsonMapping(self)
         }
 
+        guard let jsonStr = (json["result"] as? [String : Any]) else {
+            throw MoyaError.jsonMapping(self)
+        }
+        guard let object = T.deserialize(from: jsonStr) else {
+            throw MoyaError.jsonMapping(self)
+        }
+        print(object)
+        
         return object
     }
 
@@ -37,7 +45,7 @@ extension Response {
                  throw MoyaError.jsonMapping(self)
         }
 
-        return   itemsArr.flatMap {T.deserialize(from: $0)}
+        return   itemsArr.compactMap {T.deserialize(from: $0)}
     }
 }
 
@@ -47,8 +55,6 @@ extension ObservableType where E == Response {
     public func mapObject<T: HandyJSON>(_ type: T.Type) -> Observable<T> {
 
         return flatMap { response -> Observable<T> in
-            print("发起网络请求")
-            print(response)
 
             return Observable.just(try response.mapObject(T.self))
         }

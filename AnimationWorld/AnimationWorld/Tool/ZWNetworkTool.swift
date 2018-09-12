@@ -9,12 +9,9 @@
 import Foundation
 import Moya
 
-let url = "http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comichot_1.json?&ver=2.1.3&plat=ip&channel=appstore&app=FuCiYuan"
-
 enum ZWNetworkTool {
     // 18237100685  yw12345
-    case home(url:String)
-    case dynamicData(token:String,pagesize:String,pageindex:String)
+    case hostUrl(url:String)
 }
 extension ZWNetworkTool:TargetType {
     var headers: [String : String]? {
@@ -24,22 +21,17 @@ extension ZWNetworkTool:TargetType {
     /// The target's base `URL`.
     var baseURL: URL {
         switch self {
-        case .dynamicData( _, _, _):
-            return URL(string:url)!
-        case .home(let url):
+        case .hostUrl(let url):
             return URL(string:url)!
         }
-
 
     }
 
     /// The path to be appended to `baseURL` to form the full `URL`.
     var path: String {
         switch self {
-        case .home:
+        case .hostUrl:
             return ""
-        case .dynamicData( _, _, _):
-            return "app/personal/queryBlog"
         }
 
     }

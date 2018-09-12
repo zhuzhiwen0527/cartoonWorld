@@ -9,6 +9,7 @@
 import UIKit
 import Reusable
 import Kingfisher
+import RxSwift
 class ZWCartoonDetailHeaderView: UIView, NibLoadable{
 
     @IBOutlet weak var imgV: UIImageView!
@@ -18,6 +19,7 @@ class ZWCartoonDetailHeaderView: UIView, NibLoadable{
     @IBOutlet weak var updateTimeLab: UILabel!
     @IBOutlet weak var leftBtn: UIButton!
     @IBOutlet weak var rightBtn: UIButton!
+
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -46,6 +48,9 @@ class ZWCartoonDetailHeaderView: UIView, NibLoadable{
         rightBtn.layer.borderWidth = 0.5
 
     }
-    @IBAction func click(_ sender: UIButton) {
+
+    override func layoutSubviews() {
+        self.frame = CGRect(x: 0, y: 0, width: W, height: 190)
     }
+
 }

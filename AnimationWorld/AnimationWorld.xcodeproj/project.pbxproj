@@ -18,6 +18,11 @@
 		ED29956E2122AF6000F3E7B5 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29956D2122AF6000F3E7B5 /* common.swift */; };
 		ED29957C2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29957A2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift */; };
 		ED29957D2122D36B00F3E7B5 /* ConstraintArrayDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29957B2122D36B00F3E7B5 /* ConstraintArrayDSL.swift */; };
+		ED34DB212148EDB100CB9BEC /* ZWCartoonInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED34DB202148EDB100CB9BEC /* ZWCartoonInfoViewModel.swift */; };
+		ED34DB232148EDC900CB9BEC /* ZWCartoonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED34DB222148EDC900CB9BEC /* ZWCartoonInfoModel.swift */; };
+		ED34DB252148FEE600CB9BEC /* ZWChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED34DB242148FEE600CB9BEC /* ZWChapterModel.swift */; };
+		ED67D937213EB99800F6DCEB /* ZWCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67D935213EB99800F6DCEB /* ZWCommentTableViewCell.swift */; };
+		ED67D938213EB99800F6DCEB /* ZWCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67D936213EB99800F6DCEB /* ZWCommentTableViewCell.xib */; };
 		ED6E512D21211AF8005E9879 /* ZWHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E512C21211AF8005E9879 /* ZWHomeModel.swift */; };
 		ED6E513021211C2E005E9879 /* ZWViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E512F21211C2E005E9879 /* ZWViewModelType.swift */; };
 		ED6E513321211C47005E9879 /* ZWHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E513221211C47005E9879 /* ZWHomeViewModel.swift */; };
@@ -69,6 +74,11 @@
 		ED29957B2122D36B00F3E7B5 /* ConstraintArrayDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintArrayDSL.swift; sourceTree = "<group>"; };
 		ED29957E2122E89C00F3E7B5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		ED29957F2122E89C00F3E7B5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		ED34DB202148EDB100CB9BEC /* ZWCartoonInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCartoonInfoViewModel.swift; sourceTree = "<group>"; };
+		ED34DB222148EDC900CB9BEC /* ZWCartoonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCartoonInfoModel.swift; sourceTree = "<group>"; };
+		ED34DB242148FEE600CB9BEC /* ZWChapterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWChapterModel.swift; sourceTree = "<group>"; };
+		ED67D935213EB99800F6DCEB /* ZWCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCommentTableViewCell.swift; sourceTree = "<group>"; };
+		ED67D936213EB99800F6DCEB /* ZWCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWCommentTableViewCell.xib; sourceTree = "<group>"; };
 		ED6E512C21211AF8005E9879 /* ZWHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWHomeModel.swift; sourceTree = "<group>"; };
 		ED6E512F21211C2E005E9879 /* ZWViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWViewModelType.swift; sourceTree = "<group>"; };
 		ED6E513221211C47005E9879 /* ZWHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWHomeViewModel.swift; sourceTree = "<group>"; };
@@ -178,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				ED6E512C21211AF8005E9879 /* ZWHomeModel.swift */,
+				ED34DB222148EDC900CB9BEC /* ZWCartoonInfoModel.swift */,
+				ED34DB242148FEE600CB9BEC /* ZWChapterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				ED6E513221211C47005E9879 /* ZWHomeViewModel.swift */,
+				ED34DB202148EDB100CB9BEC /* ZWCartoonInfoViewModel.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -205,6 +218,8 @@
 				ED29956B2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift */,
 				ED067B4821324DDC002D59A7 /* ZWCartoonDetailHeaderView.swift */,
 				ED067B4A21324DE5002D59A7 /* ZWCartoonDetailHeaderView.xib */,
+				ED67D935213EB99800F6DCEB /* ZWCommentTableViewCell.swift */,
+				ED67D936213EB99800F6DCEB /* ZWCommentTableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -421,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED67D938213EB99800F6DCEB /* ZWCommentTableViewCell.xib in Resources */,
 				ED067B4B21324DE5002D59A7 /* ZWCartoonDetailHeaderView.xib in Resources */,
 				EDB5E125211FDB5500F64548 /* LaunchScreen.storyboard in Resources */,
 				EDB5E122211FDB5500F64548 /* Assets.xcassets in Resources */,
@@ -528,12 +544,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED34DB252148FEE600CB9BEC /* ZWChapterModel.swift in Sources */,
 				ED29956E2122AF6000F3E7B5 /* common.swift in Sources */,
 				ED1B6A0E21206E3600A81742 /* ZWBaseViewController.swift in Sources */,
 				ED6E51352121623E005E9879 /* ZWHomeCollectionViewCell.swift in Sources */,
 				EDB5E11B211FDB5100F64548 /* AppDelegate.swift in Sources */,
 				ED1B6A0C2120695900A81742 /* ZWHomeViewController.swift in Sources */,
+				ED67D937213EB99800F6DCEB /* ZWCommentTableViewCell.swift in Sources */,
 				EDE9019B212054EF00D0D2AD /* ZWMainTabBarViewController.swift in Sources */,
+				ED34DB232148EDC900CB9BEC /* ZWCartoonInfoModel.swift in Sources */,
 				ED29956C2122AE9900F3E7B5 /* ZWHomeHeaderCollectionReusableView.swift in Sources */,
 				EDE901922120489000D0D2AD /* ValidationError.swift in Sources */,
 				EDE9019621204B4900D0D2AD /* Observable+HandyJSON.swift in Sources */,
@@ -543,6 +562,7 @@
 				ED6E513321211C47005E9879 /* ZWHomeViewModel.swift in Sources */,
 				EDE9019821204C3D00D0D2AD /* ZWNetworkTool.swift in Sources */,
 				ED29957C2122D36B00F3E7B5 /* ConstraintArray+Extensions.swift in Sources */,
+				ED34DB212148EDB100CB9BEC /* ZWCartoonInfoViewModel.swift in Sources */,
 				ED29957D2122D36B00F3E7B5 /* ConstraintArrayDSL.swift in Sources */,
 				ED067B4921324DDC002D59A7 /* ZWCartoonDetailHeaderView.swift in Sources */,
 				ED6E513A212184BA005E9879 /* ZWMeViewController.swift in Sources */,

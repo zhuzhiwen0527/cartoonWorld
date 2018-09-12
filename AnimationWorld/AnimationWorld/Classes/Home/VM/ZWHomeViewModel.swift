@@ -65,7 +65,7 @@ extension ZWHomeViewModel :ZWViewModelType{
 
         output.requestCommond.subscribe(onNext: {[unowned self] isReloadData in
             print(input.name)
-            zwNetTool.rx.request(.home(url:input.name)).asObservable().mapArray(homeModel.self).subscribe({ [weak self] (event) in
+            zwNetTool.rx.request(.hostUrl(url:input.name)).asObservable().mapArray(homeModel.self).subscribe({ [weak self] (event) in
                 switch event {
                 case let .next(modelArr):
                     output.index =  isReloadData ? 0 :  output.index + 1

@@ -89,20 +89,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYi-RG-dCQ">
-                    <rect key="frame" x="140" y="143" width="80" height="32"/>
+                    <rect key="frame" x="140" y="143" width="0.0" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="hZF-Vu-sDN"/>
+                        <constraint firstAttribute="width" id="hZF-Vu-sDN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="目录">
                         <color key="titleColor" red="0.23921568627450979" green="0.11764705882352941" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <connections>
-                        <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="2db-am-B45"/>
-                    </connections>
                 </button>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwC-bh-xsH">
-                    <rect key="frame" x="235" y="143" width="80" height="32"/>
+                    <rect key="frame" x="140" y="143" width="80" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="wf8-BK-YzY"/>
                     </constraints>
@@ -110,14 +107,11 @@
                     <state key="normal" title="开始阅读">
                         <color key="titleColor" red="0.23921568627450979" green="0.11764705882352941" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <connections>
-                        <action selector="click:" destination="iN0-l3-epB" eventType="touchUpInside" id="Asu-Ie-sK9"/>
-                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="xwC-bh-xsH" firstAttribute="leading" secondItem="iYi-RG-dCQ" secondAttribute="trailing" constant="15" id="247-5Z-UAp"/>
+                <constraint firstItem="xwC-bh-xsH" firstAttribute="leading" secondItem="iYi-RG-dCQ" secondAttribute="trailing" id="247-5Z-UAp"/>
                 <constraint firstItem="ELd-Xn-XmM" firstAttribute="height" secondItem="kHr-3S-6hh" secondAttribute="height" id="5zM-S0-kP6"/>
                 <constraint firstItem="SPw-Ls-MXC" firstAttribute="height" secondItem="aqU-MJ-k9F" secondAttribute="height" id="8ao-tP-Pfk"/>
                 <constraint firstItem="15d-4A-6L9" firstAttribute="leading" secondItem="FBK-p4-NVx" secondAttribute="trailing" id="CJB-hs-zle"/>

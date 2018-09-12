@@ -74,7 +74,7 @@ extension ZWHomeViewController{
 
         })
 
-        let homeInput = ZWHomeViewModel.ZWInput(name: "http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comichot_1.json?&ver=2.1.3&plat=ip&channel=appstore&app=FuCiYuan")
+        let homeInput = ZWHomeViewModel.ZWInput(name:"http://fuciyuanjson.biaoqingdou.com/fuciyuan/v1/comichot_1.json?&ver=2.1.3&plat=ip&channel=appstore&app=FuCiYuan")
         let homeOutput = viewModel.transform(input: homeInput)
 
         homeOutput.requestCommond.onNext(true)
