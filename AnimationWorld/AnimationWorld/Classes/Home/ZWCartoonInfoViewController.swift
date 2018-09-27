@@ -30,8 +30,6 @@ class ZWCartoonInfoViewController: ZWBaseViewController {
         super.didReceiveMemoryWarning()
 
     }
-    
-
 }
 
 extension ZWCartoonInfoViewController {
@@ -41,7 +39,7 @@ extension ZWCartoonInfoViewController {
         headerView.model = self.model!
         tableView.tableHeaderView = headerView;
         headerView.rightBtn.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] in
-//            print(self?.viewModel.chapterModesls)
+            print(self?.viewModel.chapterModesls)
         }).disposed(by: rx.disposeBag)
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
