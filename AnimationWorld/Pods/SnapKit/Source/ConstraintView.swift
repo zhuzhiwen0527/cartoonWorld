@@ -30,7 +30,6 @@
 
 #if os(iOS) || os(tvOS)
     public typealias ConstraintView = UIView
-
 #else
     public typealias ConstraintView = NSView
 #endif

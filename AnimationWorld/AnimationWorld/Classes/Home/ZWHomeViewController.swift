@@ -36,8 +36,9 @@ class ZWHomeViewController: ZWBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-
+ 
     }
+
 }
 extension ZWHomeViewController{
 
@@ -48,11 +49,9 @@ extension ZWHomeViewController{
     collectionView?.backgroundColor = UIColor.white
     collectionView?.register(cellType: ZWHomeCollectionViewCell.self)
     collectionView?.register(supplementaryViewType: ZWHomeHeaderCollectionReusableView.self, ofKind: UICollectionElementKindSectionHeader)
-    let tabbarHeight = self.tabBarController?.tabBar.frame.height
     collectionView?.snp.makeConstraints({ (maker) in
-        maker.edges.equalTo(view).inset(ConstraintInsets(top: 0, left: 0, bottom: tabbarHeight!, right: 0))
+        maker.edges.equalTo(view).inset(ConstraintInsets(top: 0, left: 0, bottom: 0, right: 0))
     })
-
 
         setNavi()
     }

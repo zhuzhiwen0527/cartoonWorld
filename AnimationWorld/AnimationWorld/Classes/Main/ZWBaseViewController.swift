@@ -14,7 +14,7 @@ class ZWBaseViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.isTranslucent = false
-        
+        tabBarController?.tabBar.isTranslucent = false
         if #available(iOS 11.0, *) {
             UIScrollView.appearance().contentInsetAdjustmentBehavior = .never
         } else {
