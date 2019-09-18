@@ -21,6 +21,7 @@
 		ED34DB212148EDB100CB9BEC /* ZWCartoonInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED34DB202148EDB100CB9BEC /* ZWCartoonInfoViewModel.swift */; };
 		ED34DB232148EDC900CB9BEC /* ZWCartoonInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED34DB222148EDC900CB9BEC /* ZWCartoonInfoModel.swift */; };
 		ED34DB252148FEE600CB9BEC /* ZWChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED34DB242148FEE600CB9BEC /* ZWChapterModel.swift */; };
+		ED38152223323D5300A191FB /* IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED38152123323D5300A191FB /* IBDesignable.swift */; };
 		ED67D937213EB99800F6DCEB /* ZWCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67D935213EB99800F6DCEB /* ZWCommentTableViewCell.swift */; };
 		ED67D938213EB99800F6DCEB /* ZWCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED67D936213EB99800F6DCEB /* ZWCommentTableViewCell.xib */; };
 		ED6E512D21211AF8005E9879 /* ZWHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6E512C21211AF8005E9879 /* ZWHomeModel.swift */; };
@@ -77,6 +78,7 @@
 		ED34DB202148EDB100CB9BEC /* ZWCartoonInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCartoonInfoViewModel.swift; sourceTree = "<group>"; };
 		ED34DB222148EDC900CB9BEC /* ZWCartoonInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCartoonInfoModel.swift; sourceTree = "<group>"; };
 		ED34DB242148FEE600CB9BEC /* ZWChapterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWChapterModel.swift; sourceTree = "<group>"; };
+		ED38152123323D5300A191FB /* IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignable.swift; sourceTree = "<group>"; };
 		ED67D935213EB99800F6DCEB /* ZWCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWCommentTableViewCell.swift; sourceTree = "<group>"; };
 		ED67D936213EB99800F6DCEB /* ZWCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWCommentTableViewCell.xib; sourceTree = "<group>"; };
 		ED6E512C21211AF8005E9879 /* ZWHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZWHomeModel.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				ED6E512B21211AC5005E9879 /* Model */,
 				ED1B6A0B2120695900A81742 /* ZWHomeViewController.swift */,
 				ED1BB35221251CFF000CBEB5 /* ZWCartoonInfoViewController.swift */,
+				ED38152123323D5300A191FB /* IBDesignable.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				ED34DB252148FEE600CB9BEC /* ZWChapterModel.swift in Sources */,
 				ED29956E2122AF6000F3E7B5 /* common.swift in Sources */,
 				ED1B6A0E21206E3600A81742 /* ZWBaseViewController.swift in Sources */,
+				ED38152223323D5300A191FB /* IBDesignable.swift in Sources */,
 				ED6E51352121623E005E9879 /* ZWHomeCollectionViewCell.swift in Sources */,
 				EDB5E11B211FDB5100F64548 /* AppDelegate.swift in Sources */,
 				ED1B6A0C2120695900A81742 /* ZWHomeViewController.swift in Sources */,

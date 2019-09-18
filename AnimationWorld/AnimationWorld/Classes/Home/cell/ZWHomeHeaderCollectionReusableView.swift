@@ -39,6 +39,7 @@ class ZWHomeHeaderCollectionReusableView: UICollectionReusableView ,Reusable{
     func setUI(){
         banner = UIImageView().then({
             $0.contentMode = .scaleAspectFill
+            $0.layer.masksToBounds = true
             $0.backgroundColor = UIColor.gray
             addSubview($0)
             

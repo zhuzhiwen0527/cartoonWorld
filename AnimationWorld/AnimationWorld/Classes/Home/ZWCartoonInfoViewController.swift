@@ -25,6 +25,7 @@ class ZWCartoonInfoViewController: ZWBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = model?.title
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,12 +40,13 @@ extension ZWCartoonInfoViewController {
         headerView.model = self.model!
         tableView.tableHeaderView = headerView;
         headerView.rightBtn.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] in
-            print(self?.viewModel.chapterModesls)
+            print(self?.viewModel.chapterModesls ?? "kong")
         }).disposed(by: rx.disposeBag)
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
 
     }
 

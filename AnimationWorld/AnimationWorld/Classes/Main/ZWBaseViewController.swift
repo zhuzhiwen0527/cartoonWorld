@@ -20,6 +20,7 @@ class ZWBaseViewController: UIViewController {
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
+        self.setNaviShadowWithColor(color: UIColor.white)
         self.addSubViews()
         self.bindView()
         
@@ -56,5 +57,12 @@ extension ZWBaseViewController{
     }
     @objc func back()   {
         navigationController?.popViewController(animated: true)
+    }
+
+    @objc func setNaviShadowWithColor(color:UIColor){
+
+        self.navigationController?.navigationBar.shadowImage = UIImage(color:color)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor.white), for: .default)
+        
     }
 }
