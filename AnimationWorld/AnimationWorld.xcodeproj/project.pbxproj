@@ -157,7 +157,6 @@
 				ED6E512B21211AC5005E9879 /* Model */,
 				ED1B6A0B2120695900A81742 /* ZWHomeViewController.swift */,
 				ED1BB35221251CFF000CBEB5 /* ZWCartoonInfoViewController.swift */,
-				ED38152123323D5300A191FB /* IBDesignable.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -295,6 +294,7 @@
 		EDE9018E2120482500D0D2AD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				ED38152123323D5300A191FB /* IBDesignable.swift */,
 				ED2995792122D36B00F3E7B5 /* SnapKitExtension */,
 				EDE9019521204B4900D0D2AD /* Observable+HandyJSON.swift */,
 				ED2995692122AAAD00F3E7B5 /* UIColor+Extension.swift */,
